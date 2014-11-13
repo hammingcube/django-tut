@@ -1,3 +1,5 @@
+django-admin startproject mysite
+
 Remember the three-step guide to making model changes:
 
 Change your models (in models.py).
