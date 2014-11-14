@@ -200,6 +200,8 @@ def index(request):
 def detail(request, question_id):
 	return HttpResponse("You're looking at question %s." % question_id)
 
+There’s also a get_list_or_404() function, which works just as get_object_or_404() – except using filter() instead of get(). It raises Http404 if the list is empty.
+
 
 
 
