@@ -5,6 +5,9 @@ from polls.models import Question
 from django.shortcuts import get_object_or_404, render
 from django.core.urlresolvers import reverse
 
+from django.views import generic
+
+
 def index(request):
 	questions = Question.objects.all()
 	context = {'question_list': questions}
@@ -32,3 +35,8 @@ def vote(request, question_id):
 def results(request, question_id):
 	question = get_object_or_404(Question, pk=question_id)
 	return render(request, 'polls/results.html', {'question': question})
+
+# Switching to a class based view
+class ResultsView(generic.DetailView):
+	model = Question
+	template_name = 'polls/results.html'
