@@ -76,5 +76,29 @@ python manage.py createsuperuser
 Update Question model to include a pretty printing via __str__.
 Observe we haven't really changed schema, so no need to run migrations. 
 
+Try adding another model as follows.
+
+class Choice(models.Model):
+	choice_text = models.CharField(max_length=200)
+	def __str__(self):
+		return self.choice_text
+
+Update polls/admin.py as follows:
+
+from polls.models import Question, Choice
+
+admin.site.register(Question)
+admin.site.register(Choice)
+
+Visit localhost:8080/admin/polls and click Choices.
+You see OperationalError with message
+no such table: polls_choice.
+
+Run the following steps and everything will run fine.
+
+python manage.py makemigrations 
+python manage.py migrate
+
+
 
 
