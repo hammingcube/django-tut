@@ -170,6 +170,8 @@ The idea behind include() is to make it easy to plug-and-play URLs. Since polls 
 
 First, create a directory called templates in your polls directory. Django will look for templates in there.
 
+Django’s TEMPLATE_LOADERS setting contains a list of callables that know how to import templates from various sources. One of the defaults is django.template.loaders.app_directories.Loader which looks for a “templates” subdirectory in each of the INSTALLED_APPS - this is how Django knows to find the polls templates even though we didn’t modify TEMPLATE_DIRS, as we did in Tutorial 2.
+
 
 
 
