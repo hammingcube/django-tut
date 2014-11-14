@@ -184,6 +184,26 @@ The datetime module is available, so you can do e.g. datetime.date.today()
 python manage.py migrate
 
 
+def index(request):
+	questions = Question.objects.all()
+	template = loader.get_template('polls/index.html')
+	context = RequestContext(request, {
+		'question_list' : questions,
+	})
+	return HttpResponse(template.render(context))
+
+def index(request):
+	questions = Question.objects.all()
+	context = {'question_list': questions}
+	return render(request, 'polls/index.html', context)
+
+def detail(request, question_id):
+	return HttpResponse("You're looking at question %s." % question_id)
+
+
+
+
+
 
 
 
