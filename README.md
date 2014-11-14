@@ -73,4 +73,8 @@ Running migrations:
 Creating an admin user
 python manage.py createsuperuser
 
+Update Question model to include a pretty printing via __str__.
+Observe we haven't really changed schema, so no need to run migrations. 
+
+
 
