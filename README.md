@@ -168,6 +168,9 @@ The idea behind include() is to make it easy to plug-and-play URLs. Since polls 
 ?P<question_id> defines the name that will be used to identify the matched pattern;
 
 
+First, create a directory called templates in your polls directory. Django will look for templates in there.
+
+
 
 
 
