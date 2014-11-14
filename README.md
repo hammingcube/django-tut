@@ -142,6 +142,24 @@ On mysite/urls.py, add:
 +    url(r'^polls/', 'polls.views.index', name='polls_index')
 
 
+views.py
+
+def detail(request, question_id):
+	return HttpResponse("You're looking at question %s." % question_id)
+
+polls/urls.py
+
+from polls import views
+
+
+urlpatterns = patterns('',
+    # ex: /polls/
+    url(r'^$', views.index, name='index'),
+    # ex: /polls/5/
+    url(r'^(?P<question_id>\d+)/$', views.detail, name='detail'),
+    # ex: /polls/results/5/
+    url(r'^results/(?P<question_id>\d+)/$', views.detail, name='alt'),
+)
 
 
 
