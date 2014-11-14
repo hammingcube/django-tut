@@ -60,7 +60,17 @@ Run python manage.py migrate to apply those changes to the database.
 The reason there’s separate commands to make and apply migrations is because you’ll commit migrations to your version control system and ship them with your app; they not only make your development easier, they’re also useable by other developers and in production.
 
 
+python manage.py makemigrations 
+python manage.py migrate
 
 
+Operations to perform:
+  Apply all migrations: admin, contenttypes, polls, auth, sessions
+Running migrations:
+  Applying polls.0001_initial... OK
+
+
+Creating an admin user
+python manage.py createsuperuser
 
 
