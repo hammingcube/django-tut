@@ -100,5 +100,34 @@ python manage.py makemigrations
 python manage.py migrate
 
 
+A view is a “type” of Web page in your Django application that generally 
+serves a specific function and 
+has a specific template. 
+
+In Django, web pages and other content are delivered by views. Each view is represented by a simple Python function (or method, in the case of class-based views). Django will choose a view by examining the URL that’s requested (to be precise, the part of the URL after the domain name).
+
+CurrentView:
+
+.
+├── db.sqlite3
+├── manage.py
+├── mysite
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+└── polls
+    ├── __init__.py
+    ├── admin.py
+    ├── migrations
+    │   ├── 0001_initial.py
+    │   ├── 0002_choice.py
+    │   └── __init__.py
+    ├── models.py
+    ├── tests.py
+    └── views.py
+
+
+
 
 
