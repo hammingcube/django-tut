@@ -128,6 +128,22 @@ CurrentView:
     └── views.py
 
 
+Create a view:
+
+ from django.shortcuts import render
++from django.http import HttpResponse
+
+-# Create your views here.
++def index(request):
++       return HttpResponse("Hello, this is index view of polls app!")
+
+
+On mysite/urls.py, add:
++    url(r'^polls/', 'polls.views.index', name='polls_index')
+
+
+
+
 
 
 
