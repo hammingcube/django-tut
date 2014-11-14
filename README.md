@@ -174,6 +174,17 @@ Django’s TEMPLATE_LOADERS setting contains a list of callables that know how t
 
 In short, all POST forms that are targeted at internal URLs should use the {% csrf_token %} template tag.
 
+##### Adding more functionality #####
+
+Select an option: 1
+Please enter the default value now, as valid Python
+The datetime module is available, so you can do e.g. datetime.date.today()
+>>> 1
+
+python manage.py migrate
+
+
+
 
 
 
