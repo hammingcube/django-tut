@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from polls.models import Question
 from django.shortcuts import get_object_or_404, render
 from django.core.urlresolvers import reverse
@@ -14,6 +15,7 @@ def detail(request, question_id):
 	return render(request, 'polls/detail.html', {'question': question})
 
 def vote(request, question_id):
+	import sys
 	print >>sys.stderr, 'Goodbye, cruel world!'
 	p = get_object_or_404(Question, pk=question_id)
 	try:
