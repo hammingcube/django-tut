@@ -161,6 +161,13 @@ urlpatterns = patterns('',
     url(r'^results/(?P<question_id>\d+)/$', views.detail, name='alt'),
 )
 
+Django will load the mysite.urls Python module because it’s pointed to by the ROOT_URLCONF setting. It finds the variable named urlpatterns and traverses the regular expressions in order. Whenever Django encounters include(), it chops off whatever part of the URL matched up to that point and sends the remaining string to the included URLconf for further processing.
+
+The idea behind include() is to make it easy to plug-and-play URLs. Since polls are in their own URLconf (polls/urls.py), they can be placed under “/polls/”, or under “/fun_polls/”, or under “/content/polls/”, or any other path root, and the app will still work.
+
+?P<question_id> defines the name that will be used to identify the matched pattern;
+
+
 
 
 
