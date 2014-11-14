@@ -35,3 +35,6 @@ Running migrations:
 
 python manage.py runserver 8080
 
+ls
+db.sqlite3 manage.py  mysite
+
