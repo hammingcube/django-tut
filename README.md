@@ -172,6 +172,8 @@ First, create a directory called templates in your polls directory. Django will 
 
 Django’s TEMPLATE_LOADERS setting contains a list of callables that know how to import templates from various sources. One of the defaults is django.template.loaders.app_directories.Loader which looks for a “templates” subdirectory in each of the INSTALLED_APPS - this is how Django knows to find the polls templates even though we didn’t modify TEMPLATE_DIRS, as we did in Tutorial 2.
 
+In short, all POST forms that are targeted at internal URLs should use the {% csrf_token %} template tag.
+
 
 
 
