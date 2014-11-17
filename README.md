@@ -202,6 +202,36 @@ def detail(request, question_id):
 
 There’s also a get_list_or_404() function, which works just as get_object_or_404() – except using filter() instead of get(). It raises Http404 if the list is empty.
 
+## URL routing
+
+mysite/mysite/urls.py
+    url(r'^polls/', include('polls.urls', namespace="polls")),
+mysite/polls/urls.py
+    url(r'^$', views.index, name='index'),
+
+reverse('polls:index') refers to the URL index in namespace polls, that is, '/polls/'.
+
+
+## Django Tests
+
+
+it created a special database for the purpose of testing
+it looked for test methods - ones whose names begin with test
+
+
+setup_test_environment() installs a template renderer which will allow us to examine some additional attributes on responses such as response.context that otherwise wouldn’t be available. 
+
+Note that this method *does not* setup a test database, so the following will be run against the existing database.
+
+
+## Some helper
+Question.objects.create
+.save()
+.filter()
+
+
+
+ where we need to do a couple of things that won’t be necessary in tests.py.  (later in tests.py we will use the django.test.TestCase class, which comes with its own client, so this won’t be required)
 
 
 
